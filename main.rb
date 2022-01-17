@@ -7,13 +7,22 @@ class Main
       end
     end
   
-    def open_file
-        file = File.open(@file_name)
+    def process_file (file)
         file_data = file.readlines.map(&:chomp)
-        
         puts file_data.first
-        file.close
     end
+
+    def validate
+        begin
+            file = File.open(@file_name)
+            process_file(file)
+        rescue
+            puts 'File not exists.'
+        ensure
+            file.close unless file.nil?
+        end         
+    end
+
   end
   
-  Main.new(ARGV).open_file if $PROGRAM_NAME == __FILE__
+  Main.new(ARGV).validate if $PROGRAM_NAME == __FILE__
