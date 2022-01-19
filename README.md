@@ -28,11 +28,6 @@ To check Ruby installation: **which ruby**<br/>
 
 gem install bundler
 
-### Install Rspec gem
-
-* gem install rspec
-* gem install rspec-core
-
 ### Steps to configure Test
 
 * Start using the command **bundle init** to create a Gemfile

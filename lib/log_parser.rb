@@ -1,21 +1,19 @@
 class LogParser
-    def initialize(args)
-      if args.first.nil?
-        @file_name = "games.log"
-      else
-        @file_name = args.first
-      end
+    def initialize(file_path = "games.log")
+      @file_name = file_path
     end
 
     def execute
-      process_file(validate_file) unless validate_file.nil?
+      process = process_file(validate_file) unless validate_file.nil?
+      process
     end
-  
+
+private
     def process_file (file)
-        file_data = file.readlines.map(&:chomp)
-        puts file_data.first
+        file_data = file.readline.chomp
+        puts file_data
         file.close
-        file_data.first
+        file_data
     end
 
     def validate_file
@@ -24,9 +22,7 @@ class LogParser
             file
         rescue
             puts 'File does not exists'
-            nil
-        ensure
-            
+            nil 
         end         
     end
   end

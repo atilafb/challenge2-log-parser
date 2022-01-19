@@ -1,4 +1,4 @@
-require_relative "/home/atila/Development/challenge2-log-parser/lib/log_parser"
+require_relative "./lib/log_parser.rb"
 
-
-LogParser.new(ARGV).execute if $PROGRAM_NAME == __FILE__
+log_parse = LogParser.new()
+log_parse.execute
