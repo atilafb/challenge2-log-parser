@@ -16,15 +16,13 @@ curl -sSL https://get.rvm.io/ | bash -s stable
 
 ### Install Ruby
 
-rvm install ruby-3.1.0
-source ~/.rmv/scripts/rvm
-rvm use 3.1.0 --default
+* rvm install ruby-3.1.0
+* source ~/.rmv/scripts/rvm
+* rvm use 3.1.0 --default
 
-**To check Ruby version run the command below**
-ruby -v
+To check Ruby version run the command: **ruby -v**<br/>
 
-**To check Ruby installation**
-which ruby
+To check Ruby installation: **which ruby**<br/>
 
 ### Install Bundler to manage gems
 
@@ -32,8 +30,8 @@ gem install bundler
 
 ### Install Rspec gem
 
-gem install rspec
-gem install rspec-core
+* gem install rspec
+* gem install rspec-core
 
 ### Steps to configure Test
 
