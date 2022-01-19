@@ -4,8 +4,7 @@ class LogParser
     end
 
     def execute
-      process = process_file(validate_file) unless validate_file.nil?
-      process
+      process_file(validate_file) unless validate_file.nil?
     end
 
 private
@@ -18,8 +17,8 @@ private
 
     def validate_file
         begin
-            file = File.open(@file_name)
-            file
+            puts @file_name
+            File.open(@file_name)
         rescue
             puts 'File does not exists'
             nil 
