@@ -8,7 +8,7 @@ class LogParser
   end
 
 private
-  def process_file (file)
+  def process_file(file)
     file_data = file.readline.chomp
     puts file_data
     file.close

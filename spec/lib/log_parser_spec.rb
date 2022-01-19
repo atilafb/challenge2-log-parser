@@ -10,6 +10,6 @@ describe '#execute' do
   it 'not execute the methods if the file does not exists' do
     log = LogParser.new("outro_arquivo.log")
     log_parse = log.execute
-    expect(log_parse). to be_falsey
+    expect(log_parse).to be_falsey
   end
 end
