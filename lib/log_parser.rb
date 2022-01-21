@@ -5,7 +5,7 @@ class LogParser
     @file_name = file_path
   end
 
-  def validate_file
+  def execute
     begin   
       file = File.open(@file_name)
       process_file(file)
