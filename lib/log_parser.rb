@@ -1,26 +1,29 @@
 require 'json'
 
 class LogParser
-  def initialize(file_path = "games.log")
+  def initialize(file_path = 'games.log')
     @file_name = file_path
+    raise 'File not exist' unless File.exist? @file_name
   end
 
-  def execute
-    begin   
-      file = File.open(@file_name)
-      process_file(file)
-    rescue
-      puts 'File does not exists'
-      nil
-    ensure
-      file.close unless file.nil?
-    end    
+  def first_line
+    file = File.open(@file_name)
+    file_data = file.readline.chomp
+    puts file_data
+    file.close
+    file_data
   end
 
-private
-  def process_file(file)
-    count_lines = File.read(file).each_line.count
-    obj = {"lines": count_lines}
+  def count_lines
+    file = File.open(@file_name)
+    lines = File.read(file).each_line.count
+    puts lines
+    file.close
+    lines
+  end
+
+  def process_file
+    obj = { "lines": count_lines }
     json = JSON.pretty_generate(obj)
     response = "\"#{@file_name}\": #{json}"
     puts response
