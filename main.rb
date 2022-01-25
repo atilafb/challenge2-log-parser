@@ -1,4 +1,15 @@
 require_relative "./lib/log_parser.rb"
 
-log_parse = LogParser.new
-log_parse.validate_file
+class Main
+  def initialize(log_parser)
+    @log_parser = log_parser
+  end
+
+  def parser
+    @log_parser.execute
+  end
+end
+
+log = LogParser.new
+log_parse = Main.new(log)
+puts log_parse.parser
