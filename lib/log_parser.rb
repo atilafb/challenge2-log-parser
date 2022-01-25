@@ -11,7 +11,6 @@ class LogParser
       process_file(file)
     rescue
       puts 'File does not exists'
-      nil
     ensure
       file.close unless file.nil?
     end    
