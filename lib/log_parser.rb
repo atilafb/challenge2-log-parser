@@ -18,11 +18,9 @@ class LogParser
 
 private
   def process_file(file)
-    count_lines = File.read(file).each_line.count
-    obj = {"lines": count_lines}
+    count_lines = file.readlines.count
+    obj = { "lines": count_lines }
     json = JSON.pretty_generate(obj)
-    response = "\"#{@file_name}\": #{json}"
-    puts response
-    response
+    "\"#{@file_name}\": #{json}"
   end
 end
