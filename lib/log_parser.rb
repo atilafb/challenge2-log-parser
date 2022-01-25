@@ -47,8 +47,6 @@ class LogParser
   def process_file
     obj = { "lines": count_lines, "players": find_players}
     json = JSON.pretty_generate(obj)
-    response = "\"#{@file_name}\": #{json}"
-    puts response
-    response
+    "\"#{@file_name}\": #{json}"
   end
 end
