@@ -9,7 +9,6 @@ class LogParser
   def first_line
     file = File.open(@file_name)
     file_data = file.readline.chomp
-    puts file_data
     file.close
     file_data
   end
