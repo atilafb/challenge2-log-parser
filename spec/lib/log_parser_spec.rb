@@ -13,7 +13,7 @@ describe LogParser do
     it 'count the lines of the file' do
       log = LogParser.new('./spec/fixtures/game_test.log')
       log_parse = log.count_lines
-      expect(log_parse).to be(40)
+      expect(log_parse).to be(41)
     end
   end
 
@@ -22,7 +22,7 @@ describe LogParser do
       mock_path = './spec/fixtures/game_test.log'
       log = LogParser.new(mock_path)
       log_parse = log.process_file
-      expect(log_parse).to eq("\"#{mock_path}\": {\n  \"lines\": 40,\n  \"players\": [\n    \"Isgalamido\",\n    \"Dono da Bola\",\n    \"Mocinha\"\n  ]\n}")
+      expect(log_parse).to eq("\"#{mock_path}\": {\n  \"lines\": 41,\n  \"players\": [\n    \"Isgalamido\",\n    \"Dono da Bola\",\n    \"Mocinha\"\n  ]\n}")
     end
   end
 end
