@@ -6,10 +6,11 @@ class Main
   end
 
   def parser
-    @log_parser.execute
+    @log_parser.process_file
   end
 end
 
 log = LogParser.new
 log_parse = Main.new(log)
 puts log_parse.parser
+
