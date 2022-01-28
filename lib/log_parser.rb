@@ -49,3 +49,4 @@ class LogParser
     "\"#{@file_name}\": #{json}"
   end
 end
+

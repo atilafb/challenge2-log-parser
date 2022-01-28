@@ -13,3 +13,4 @@ end
 log = LogParser.new
 log_parse = Main.new(log)
 puts log_parse.parser
+

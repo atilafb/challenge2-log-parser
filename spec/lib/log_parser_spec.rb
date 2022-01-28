@@ -26,3 +26,4 @@ describe LogParser do
     end
   end
 end
+
